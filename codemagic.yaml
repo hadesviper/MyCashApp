@@ -30,3 +30,4 @@ workflows:
       email:
         recipients:
           - hadesviper46@gmail.com
+chmod +x gradlew
