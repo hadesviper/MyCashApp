@@ -10,7 +10,3 @@ workflows:
       - name: Build APK
         script: |
           ./gradlew assembleRelease
-
-      - name: Deploy to Google Play
-        script: |
-          # Your deployment script or command here
