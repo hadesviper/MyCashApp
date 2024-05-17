@@ -30,15 +30,11 @@ class FragmentHome : Fragment(R.layout.fragment_home) {
     ): View {
         Constants.statusBarVisibility(true,requireActivity())
         binding = FragmentHomeBinding.inflate(layoutInflater)
-        binding.run {
-            viewModelUser = this@FragmentHome.viewModelUser
-
-        }
         userData = viewModelUser.state.value?.userData
-        userData?.apply {
-            binding.test.text = "name: $name  \naddress: $userID \n longitude: $lng \n latitue: $lat"
+        userData?.run {
             longitude = lng
             latitude  = lat
+            binding.userData = this
         }
         initializeCategories()
         initializePopular()

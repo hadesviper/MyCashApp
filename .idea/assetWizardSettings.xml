@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/currency_pound/baseline_currency_pound_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_forward_ios/baseline_arrow_forward_ios_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,7 +33,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_currency_pound_24" />
+                            <entry key="color" value="ffd279" />
+                            <entry key="outputName" value="baseline_arrow_forward_ios_24" />
                             <entry key="sourceFile" value="D:\Android Projects\firstandroid\nWeaveApp" />
                           </map>
                         </option>

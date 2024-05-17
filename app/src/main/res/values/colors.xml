@@ -6,4 +6,6 @@
     <color name="secondary">#484848</color>
     <color name="background">#FFFFFF</color>
     <color name="red">#BC0000</color>
+    <color name="shadow_color">#BBBBBB</color>
+    <color name="subt_text">#484848</color>
 </resources>
