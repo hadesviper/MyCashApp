@@ -27,19 +27,15 @@ object MainModule {
     @Singleton
     @Provides
     fun getRetrofitInstance(@ApplicationContext context:Context ): Retrofit {
-        val cacheSize = 10 * 1024 * 1024 // 10MB cache size
-        val cacheDirectory = File(context.cacheDir, "http_cache")
-        val cache = Cache(cacheDirectory, cacheSize.toLong())
 
         val client = OkHttpClient.Builder()
             .connectTimeout(90, TimeUnit.SECONDS)
             .readTimeout(90, TimeUnit.SECONDS)
             .writeTimeout(90, TimeUnit.SECONDS)
             .callTimeout(90, TimeUnit.SECONDS)
-            .cache(cache)
             .build()
         return Retrofit.Builder()
-            .baseUrl(Constants.Base_Url)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

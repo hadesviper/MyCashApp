@@ -2,7 +2,6 @@ package com.herald.mycashapp.domain.usecases
 
 import com.herald.mycashapp.common.Constants
 import com.herald.mycashapp.common.Resources
-import com.herald.mycashapp.domain.models.CategoriesModel
 import com.herald.mycashapp.domain.models.PopularSellersModel
 import com.herald.mycashapp.domain.repository.RetroRepo
 import kotlinx.coroutines.flow.Flow
@@ -23,7 +22,6 @@ class GetPopularSellersUseCase @Inject constructor(
         try {
             emit(Resources.Loading())
             val data = retroRepo.getPopularSellers(
-                authorizationHeader = Constants.Bearer_Auth,
                 latitude = latitude,
                 longitude = longitude,
                 filter = filter

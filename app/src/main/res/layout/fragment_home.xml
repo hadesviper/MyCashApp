@@ -6,9 +6,6 @@
         <variable
             name="viewModelUser"
             type="com.herald.mycashapp.presentation.viewmodels.UserViewModel" />
-        <variable
-            name="viewModelCategories"
-            type="com.herald.mycashapp.presentation.viewmodels.UserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,9 +14,10 @@
         android:background="@color/white">
 
         <TextView
+            android:id="@+id/test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewModelUser.state.userData.name}"
+            android:text="sss"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

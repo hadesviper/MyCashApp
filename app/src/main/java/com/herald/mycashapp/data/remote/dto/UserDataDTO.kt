@@ -60,7 +60,13 @@ data class UserDataDTO(
 
     fun toUserDataModel(): UserDataModel {
         return UserDataModel(
-            name = data.name, address = data.addresses?.getOrNull(0)?.address.orEmpty(), phone = data.phone, token = data.token
+            userID = data.id,
+            name = data.name,
+            address = data.addresses?.getOrNull(0)?.address.orEmpty(),
+            phone = data.phone,
+            token = data.token,
+            lng = data.addresses?.getOrNull(0)?.lat?.toDouble() ?: 0.0,
+            lat = data.addresses?.getOrNull(0)?.lng?.toDouble() ?: 0.0
         )
     }
 }

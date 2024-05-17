@@ -1,5 +1,6 @@
 package com.herald.mycashapp.data.remote
 
+import com.herald.mycashapp.common.Constants
 import com.herald.mycashapp.data.remote.dto.CategoriesDTO
 import com.herald.mycashapp.data.remote.dto.PopularSellersDTO
 import com.herald.mycashapp.data.remote.dto.TrendingSellersDTO
@@ -20,7 +21,7 @@ interface RetroService {
         @Field("email") email: String,
         @Field("password") password: String,
         @Field("phone") phone: String,
-        @Field("device_token") deviceToken: String ="",
+        @Field("device_token") deviceToken: String = Constants.DEVICE_TOKEN,
         @Header("lang") langHeader: String = "ar"
     ): UserDataDTO
 
@@ -29,7 +30,7 @@ interface RetroService {
     suspend fun userLogIn(
         @Field("email") email: String,
         @Field("password") password: String,
-        @Field("device_token") deviceToken: String = "12233454566787877",
+        @Field("device_token") deviceToken: String = Constants.DEVICE_TOKEN,
         @Header("Accept") acceptHeader: String = "application/json",
         @Header("lang") langHeader: String = "ar"
     ): UserDataDTO
@@ -37,7 +38,7 @@ interface RetroService {
     @GET("base-categories")
     suspend fun getCategories(
         @Header("Accept") acceptHeader: String = "application/json",
-        @Header("Authorization") authorizationHeader: String,
+        @Header("Authorization") authorizationHeader: String = Constants.BEARER_AUTH,
         @Header("lang") langHeader: String = "ar"
     ): CategoriesDTO
 
@@ -47,7 +48,7 @@ interface RetroService {
         @Query("lng") longitude: Double,
         @Query("filter") filter: Int,
         @Header("Accept") acceptHeader: String = "application/json",
-        @Header("Authorization") authorizationHeader: String,
+        @Header("Authorization") authorizationHeader: String = Constants.BEARER_AUTH,
         @Header("lang") langHeader: String = "ar"
     ): TrendingSellersDTO
 
@@ -57,7 +58,7 @@ interface RetroService {
         @Query("lng") longitude: Double,
         @Query("filter") filter: Int,
         @Header("Accept") acceptHeader: String = "application/json",
-        @Header("Authorization") authorizationHeader: String,
+        @Header("Authorization") authorizationHeader: String = Constants.BEARER_AUTH,
         @Header("lang") langHeader: String = "ar"
     ): PopularSellersDTO
 }

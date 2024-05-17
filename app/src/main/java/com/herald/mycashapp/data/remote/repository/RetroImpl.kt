@@ -16,43 +16,33 @@ class RetroImpl @Inject constructor(
         name: String,
         email: String,
         password: String,
-        phone: String,
-        deviceToken: String,
-        langHeader: String
+        phone: String
     ): UserDataDTO {
-        return retroService.userSignUp(name, email, password, phone, deviceToken, langHeader)
+        return retroService.userSignUp(name, email, password, phone)
     }
 
     override suspend fun userLogIn(
         email: String,
         password: String,
-        deviceToken: String,
-        acceptHeader: String,
-        langHeader: String
+        acceptHeader: String
     ): UserDataDTO {
-        return retroService.userLogIn(email, password, deviceToken, acceptHeader, langHeader)
+        return retroService.userLogIn(email, password, acceptHeader)
     }
 
     override suspend fun getCategories(
-        authorizationHeader: String,
-        langHeader: String
     ): CategoriesDTO {
-        return retroService.getCategories(authorizationHeader, langHeader)
+        return retroService.getCategories()
     }
 
     override suspend fun getTrendingSellers(
         latitude: Double,
         longitude: Double,
         filter: Int,
-        authorizationHeader: String,
-        langHeader: String
     ): TrendingSellersDTO {
         return retroService.getTrendingSellers(
             latitude,
             longitude,
-            filter,
-            authorizationHeader,
-            langHeader
+            filter
         )
     }
 
@@ -60,15 +50,11 @@ class RetroImpl @Inject constructor(
         latitude: Double,
         longitude: Double,
         filter: Int,
-        authorizationHeader: String,
-        langHeader: String
     ): PopularSellersDTO {
         return retroService.getPopularSellers(
             latitude,
             longitude,
-            filter,
-            authorizationHeader,
-            langHeader
+            filter
         )
     }
 }
