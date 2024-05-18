@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -62,101 +63,265 @@
                 />
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/layoutUserData"
-            android:layout_marginTop="40dp"
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:visibility="gone"
+            tools:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutToolBar">
-            <TextView
-                android:id="@+id/txtGreetings"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutToolBar"
+            >
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{`Hello `+ userData.name}"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginHorizontal="20dp"
-                />
-
-            <TextView
-                android:id="@+id/txtAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:textSize="24sp"
-                android:maxLines="1"
-                android:textColor="@color/subt_text"
-                android:text="Riyadh ( 15 -Jasmine neighbour"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/txtGreetings"
-                android:layout_toStartOf="@id/btnFullAddress"
-                android:layout_marginHorizontal="30dp"
-                />
-            <ImageButton
-                android:id="@+id/btnFullAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/baseline_arrow_forward_ios_24"
-                android:background="@drawable/plain_background"
-                android:layout_below="@+id/txtGreetings"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="70dp"
-                android:layout_alignBottom="@id/txtAddress"
-                />
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutUserData">
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:shapeAppearance="@style/Rounded"
-                app:hintEnabled="false"
-                android:layout_marginStart="20dp"
-                android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/btnSearch"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtSearch"
+                android:gravity="top|center"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/layoutUserData"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Search for fav food ..."
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    >
+                    <TextView
+                        android:id="@+id/txtGreetings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{`Hello `+ userData.name}"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginHorizontal="20dp"
+                        />
 
-            <ImageButton
-                android:id="@+id/btnSearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/search_button"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@+id/btnFilter"
-                android:layout_marginHorizontal="10dp"
-                />
-            <ImageButton
-                android:id="@+id/btnFilter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/filter_button"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                />
-        </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txtAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:textSize="24sp"
+                        android:maxLines="1"
+                        android:textColor="@color/sub_text"
+                        android:text="Riyadh ( 15 -Jasmine neighbour"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/txtGreetings"
+                        android:layout_toStartOf="@id/btnFullAddress"
+                        android:layout_marginHorizontal="30dp"
+                        />
+                    <ImageButton
+                        android:id="@+id/btnFullAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_arrow_forward_ios_24"
+                        android:background="@drawable/plain_background"
+                        android:layout_below="@+id/txtGreetings"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="70dp"
+                        android:layout_alignBottom="@id/txtAddress"
+                        />
 
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/layoutSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/et"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:shapeAppearance="@style/Rounded"
+                        app:hintEnabled="false"
+                        android:layout_marginStart="20dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/btnSearch"
+                        app:cursorColor="@color/theme_color"
+                        app:boxStrokeColor="@color/theme_color"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Search for fav food ..."
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/btnSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/search_button"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/btnFilter"
+                        android:layout_marginHorizontal="10dp"
+                        />
+                    <ImageButton
+                        android:id="@+id/btnFilter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/filter_button"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        />
+                </RelativeLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layoutCategories"
+                    android:layout_marginTop="30dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Categories."
+                            android:textColor="@color/sub_text"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            />
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:textColor="@color/theme_color"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            app:rippleColor="@color/theme_color"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            />
+                    </RelativeLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rVCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:spanCount="1"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/category_item"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layoutPopular"
+                    android:layout_marginTop="30dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Popular now."
+                            android:textColor="@color/sub_text"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            />
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:textColor="@color/theme_color"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            app:rippleColor="@color/theme_color"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            />
+                    </RelativeLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rVPopular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:spanCount="1"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/popular_item"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layoutTrending"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="100dp"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trending now."
+                            android:textColor="@color/sub_text"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            />
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:textColor="@color/theme_color"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            app:rippleColor="@color/theme_color"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            />
+                    </RelativeLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rVTrending"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:spanCount="1"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/trending_item"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading"
+            style="@style/Widget.Material3.CircularProgressIndicator.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

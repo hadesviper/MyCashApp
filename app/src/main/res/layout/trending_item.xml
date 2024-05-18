@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/background_radius_20"
+        android:elevation="5dp">
+
+        <ImageView
+            android:id="@+id/imgBrand"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ramen" />
+    </LinearLayout>
+</layout>

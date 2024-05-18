@@ -7,5 +7,7 @@
     <color name="background">#FFFFFF</color>
     <color name="red">#BC0000</color>
     <color name="shadow_color">#BBBBBB</color>
-    <color name="subt_text">#484848</color>
+    <color name="sub_text">#484848</color>
+    <color name="view_half_alpha">#80484848</color>
+    <color name="theme_color">#FFD279</color>
 </resources>
